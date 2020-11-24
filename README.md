@@ -9,7 +9,7 @@ Link: <http://localhost:8080/swagger-ui.html>
 ![Screenshot](./swagger.png)
 
 ## Entity table
-![Screenshot](product.png)
+![Screenshot](Product.png)
 
 ## Library
 - Lombok
