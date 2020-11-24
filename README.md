@@ -1,7 +1,7 @@
 #icommerce
 
 ## Architecture
-![Screenshot](architecture.png)
+![Screenshot](Architecture.png)
 
 ##API  Documentation
 Swagger use to help user can execute the rest API with documentation
