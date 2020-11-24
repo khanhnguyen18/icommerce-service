@@ -1,0 +1,36 @@
+@startuml
+node "icommerce-bootstrap"
+
+package "Presentation" {
+  node "icommerce-rest"
+}
+
+package "Domain" {
+  node "icommerce-domain"
+}
+
+
+package "Application Service" {
+  node "icommerce-application"
+}
+
+package "Infrastructrue" {
+  node "icommerce-data-jpa"
+}
+
+database "H2" {
+
+}
+
+
+[icommerce-bootstrap] --> [icommerce-rest]
+[icommerce-bootstrap] --> [icommerce-data-jpa]
+
+[icommerce-data-jpa] --> [icommerce-domain]
+[icommerce-application] --> [icommerce-domain]
+
+[icommerce-rest] --> [icommerce-application]
+[icommerce-data-jpa] -[dashed]->H2 : use
+
+
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+
+class Product {
+    #Name
+    #Price
+    #Brand
+    #Colour
+}
+
+@enduml

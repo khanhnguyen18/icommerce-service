@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.com</groupId>
+    <artifactId>icommerce-service</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>icommerce-service</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>icommerce-bootstrap</module>
+        <module>icommerce-application</module>
+        <module>icommerce-data-jpa</module>
+        <module>icommerce-domain</module>
+        <module>icommerce-rest</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring.version>2.3.4.RELEASE</spring.version>
+        <org.mapstruct.version>1.3.0.Final</org.mapstruct.version>
+        <org.projectlombok.version>1.18.10</org.projectlombok.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${org.projectlombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.5.0</version>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- booties -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-jpa</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <!-- local -->
+            <dependency>
+                <groupId>org.com</groupId>
+                <artifactId>icommerce-application</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.com</groupId>
+                <artifactId>icommerce-bootstrap</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.com</groupId>
+                <artifactId>icommerce-data-jpa</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.com</groupId>
+                <artifactId>icommerce-domain</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.com</groupId>
+                <artifactId>icommerce-rest</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${org.mapstruct.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
