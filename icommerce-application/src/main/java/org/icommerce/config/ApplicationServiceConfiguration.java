@@ -1,5 +1,6 @@
 package org.icommerce.config;
 
+import org.icommerce.domain.repository.ProductRepository;
 import org.icommerce.service.ProductApplicationService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class ApplicationServiceConfiguration {
 
     @Bean
-    ProductApplicationService productApplicationService() {
-        return new ProductApplicationService();
+    ProductApplicationService productApplicationService(ProductRepository productRepository) {
+        return new ProductApplicationService(productRepository);
     }
 }

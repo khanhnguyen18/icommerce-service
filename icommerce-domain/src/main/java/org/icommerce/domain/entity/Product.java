@@ -11,4 +11,6 @@ import static lombok.AccessLevel.PRIVATE;
 @Builder(toBuilder = true)
 @FieldDefaults(level = PRIVATE)
 public class Product {
+    Long id;
+    String name;
 }
