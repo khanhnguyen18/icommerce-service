@@ -13,11 +13,14 @@
 
     <dependencies>
         <!--local module-->
+        <dependency>
+            <groupId>org.com</groupId>
+            <artifactId>icommerce-domain</artifactId>
+        </dependency>
         <!--booties-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>${spring.version}</version>
         </dependency>
     </dependencies>
 

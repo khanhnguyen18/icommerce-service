@@ -17,11 +17,23 @@
             <groupId>org.com</groupId>
             <artifactId>icommerce-rest</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.com</groupId>
+            <artifactId>icommerce-data-jpa</artifactId>
+        </dependency>
         <!--booties-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>${spring.version}</version>
+        </dependency>
+        <!--others-->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
         </dependency>
     </dependencies>
 
@@ -29,12 +41,9 @@
         <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
@@ -53,7 +62,6 @@
                 </configuration>
             </plugin>
         </plugins>
-
     </build>
 
 </project>
