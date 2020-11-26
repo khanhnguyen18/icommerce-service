@@ -12,11 +12,12 @@ public class ProductApplicationService {
 
     ProductRepository productRepository;
 
+    public List<Product> search(ProductCriteria productCriteria) {
+        return productRepository.search(productCriteria);
+    }
+
     public Product getDetail(Long id){
         return productRepository.getDetail(id);
     }
 
-    public List<Product> search(ProductCriteria productCriteria) {
-        return productRepository.search(productCriteria);
-    }
 }

@@ -1,6 +1,7 @@
 package org.icommerce;
 
 import org.icommerce.domain.entity.Product;
+import org.icommerce.domain.vo.Colour;
 import org.icommerce.domain.vo.ProductCriteria;
 import org.icommerce.service.ProductApplicationService;
 import org.junit.jupiter.api.Test;
@@ -21,7 +22,8 @@ class ProductApplicationServiceIT {
     void search_should_return_correct_list() {
         // Given
         ProductCriteria productCriteria = new ProductCriteria();
-        productCriteria.setName("1");
+        productCriteria.setName("Product 1");
+        productCriteria.setColour(Colour.RED);
         // When
         List<Product> products = productApplicationService.search(productCriteria);
         // Then

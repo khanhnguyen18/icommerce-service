@@ -20,7 +20,7 @@ public class ProductNameProcessor implements ProductCriteriaProcessor {
     public Specification<ProductEntity> build(ProductCriteria productCriteria) {
         return (root, query, criteriaBuilder) -> {
             Path<String> childPath = root.get("name");
-            Predicate predicate = criteriaBuilder.like(criteriaBuilder.lower(childPath), String.format("%%%s%%", productCriteria.getName()));
+            Predicate predicate = criteriaBuilder.like(criteriaBuilder.lower(childPath), String.format("%%%s%%", productCriteria.getName().toLowerCase()));
             return criteriaBuilder.or(predicate);
         };
     }
