@@ -11,10 +11,10 @@ import org.springframework.context.annotation.Import;
         RestConfiguration.class,
         DataJpaConfiguration.class,
 })
-public class BootstrapApplication {
+public class ICommerceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BootstrapApplication.class, args);
+		SpringApplication.run(ICommerceApplication.class, args);
 	}
 
 }
