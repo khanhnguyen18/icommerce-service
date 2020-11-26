@@ -6,9 +6,7 @@ import org.icommerce.domain.vo.Colour;
 
 @Getter
 @Setter
-public class ProductDTO {
-    Long id;
-    String name;
-    Colour colour;
-    Double price;
+public class UpdatePriceDTO {
+    Long productId;
+    double price;
 }

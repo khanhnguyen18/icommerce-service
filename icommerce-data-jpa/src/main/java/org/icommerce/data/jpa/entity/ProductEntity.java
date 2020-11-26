@@ -26,7 +26,7 @@ public class ProductEntity {
     @Enumerated(value = EnumType.STRING)
     Colour colour;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
     List<PriceEntity> prices;
 
     @ManyToOne

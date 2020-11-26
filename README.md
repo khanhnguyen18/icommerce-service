@@ -15,3 +15,10 @@ Link: <http://localhost:8080/swagger-ui.html>
 - Lombok
 
 ## Search product
+
+
+#H2
+* Console link: http://localhost:8080/h2-console
+* Database name:jdbc:h2:mem:testdb
+* User: sa
+* Pass:

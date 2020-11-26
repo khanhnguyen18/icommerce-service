@@ -3,6 +3,7 @@ package org.icommerce.rest;
 import lombok.AllArgsConstructor;
 import org.icommerce.dto.ProductCriteriaDTO;
 import org.icommerce.dto.ProductDTO;
+import org.icommerce.dto.UpdatePriceDTO;
 import org.icommerce.mapper.ProductCriteriaMapper;
 import org.icommerce.mapper.ProductDTOMapper;
 import org.icommerce.service.ProductApplicationService;
@@ -23,6 +24,11 @@ public class ProductController {
     @PostMapping("/search")
     public List<ProductDTO> search(@RequestBody ProductCriteriaDTO productCriteria) {
         return mapper.map(productApplicationService.search(productCriteriaMapper.map(productCriteria)));
+    }
+
+    @PutMapping("/update-price")
+    public void updatePrice(@RequestBody UpdatePriceDTO updatePriceDTO) {
+        productApplicationService.updatePrice(updatePriceDTO.getProductId(), updatePriceDTO.getPrice());
     }
 
     @GetMapping("/{id}/detail")

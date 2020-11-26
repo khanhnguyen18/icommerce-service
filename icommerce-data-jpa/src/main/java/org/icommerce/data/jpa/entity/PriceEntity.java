@@ -7,6 +7,7 @@ import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Setter
@@ -16,12 +17,12 @@ import java.time.LocalDate;
 public class PriceEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "SEQ_PRODUCT")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "SEQ_PRICE")
     Long id;
 
     double amount;
 
-    LocalDate date;
+    LocalDateTime date;
 
     @ManyToOne
     ProductEntity product;

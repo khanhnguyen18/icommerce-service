@@ -6,6 +6,7 @@ import org.icommerce.domain.vo.ProductCriteria;
 import java.util.List;
 
 public interface ProductRepository {
-    Product getDetail(Long id);
     List<Product> search(ProductCriteria productCriteria);
+    void updatePrice(Long productId, double price);
+    Product getDetail(Long id);
 }
