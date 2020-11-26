@@ -3,6 +3,7 @@ package org.icommerce.data.mapper;
 import org.icommerce.data.jpa.entity.ProductEntity;
 import org.icommerce.domain.entity.Product;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ import static org.mapstruct.NullValuePropertyMappingStrategy.SET_TO_NULL;
 )
 public interface ProductDataMapper {
 
+    @Mapping(target = "price", source = "source.latestPrice.amount")
     Product map(ProductEntity source);
 
     List<Product> mapList(List<ProductEntity> sources);

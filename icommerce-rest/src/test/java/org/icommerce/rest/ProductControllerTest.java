@@ -9,7 +9,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
-class ProductControllerTest {
+public class ProductControllerTest {
 
     @InjectMocks
     private ProductController productController;

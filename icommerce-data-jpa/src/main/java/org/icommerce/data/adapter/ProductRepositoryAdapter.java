@@ -3,8 +3,8 @@ package org.icommerce.data.adapter;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import org.icommerce.data.jpa.entity.ProductEntity;
 import org.icommerce.data.jpa.repository.ProductJpaRepository;
+import org.icommerce.data.jpa.spec.ProductSpecificationBuilder;
 import org.icommerce.data.mapper.ProductDataMapper;
 import org.icommerce.domain.entity.Product;
 import org.icommerce.domain.repository.ProductRepository;
@@ -18,6 +18,7 @@ public class ProductRepositoryAdapter implements ProductRepository {
 
     ProductJpaRepository productJpaRepository;
     ProductDataMapper mapper;
+    ProductSpecificationBuilder productSpecificationBuilder;
 
     @Override
     public Product getDetail(Long id) {
@@ -25,6 +26,8 @@ public class ProductRepositoryAdapter implements ProductRepository {
     }
 
     public List<Product> search(ProductCriteria productCriteria) {
-        return mapper.mapList(productJpaRepository.findAll());
+        return mapper.mapList(
+                productJpaRepository.findAll(productSpecificationBuilder.build(productCriteria))
+        );
     }
 }

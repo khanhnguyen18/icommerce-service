@@ -2,7 +2,10 @@ package org.icommerce.data.jpa.entity;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.JoinColumnOrFormula;
+import org.hibernate.annotations.JoinColumnsOrFormulas;
 import org.hibernate.annotations.JoinFormula;
+import org.icommerce.domain.vo.Colour;
 
 import javax.persistence.*;
 import java.util.List;
@@ -19,6 +22,9 @@ public class ProductEntity {
     Long id;
 
     String name;
+
+    @Enumerated(value = EnumType.STRING)
+    Colour colour;
 
     @OneToMany(mappedBy = "product")
     List<PriceEntity> prices;
