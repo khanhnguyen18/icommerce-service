@@ -1,10 +1,32 @@
 @startuml
 
-class Product {
+class ProductEntity {
     #Name
     #Price
     #Brand
     #Colour
+    #LatestPrice
+    #Prices
 }
 
+class PriceEntity {
+    #Amount
+    #Date
+    #Product
+}
+
+class OrderEntity {
+    #Id
+    #DateTime
+    #OrderDetails
+}
+
+class OrderDetailEntity {
+    #Id
+    #Quantity
+    #Status
+}
+
+ProductEntity }|-- PriceEntity
+OrderEntity }|-- OrderDetailEntity
 @enduml
